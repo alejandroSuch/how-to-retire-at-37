@@ -14,9 +14,13 @@ func (t *ToDo) Complete() {
 	t.completedAt = time.Now()
 }
 
+func (t ToDo) IsCompleted() bool {
+	return !t.completedAt.IsZero()
+}
+
 func (t ToDo) String() string {
 	mark := "✗"
-	if !t.completedAt.IsZero() {
+	if t.IsCompleted() {
 		mark = "✓"
 	}
 
