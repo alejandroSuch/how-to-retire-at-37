@@ -12,13 +12,9 @@ func main() {
 		domain.NewTodo("Have a snack"),
 	}
 
-	for i, todo := range todos {
-		mark := "✗"
+	todos[1].Complete()
 
-		if i%2 == 1 {
-			mark = "✓"
-		}
-
-		fmt.Printf("%s %s\n", mark, todo.Name)
+	for _, todo := range todos {
+		fmt.Printf("%s\n", todo)
 	}
 }
