@@ -1,12 +1,15 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"go-afro/pkg/domain"
+)
 
 func main() {
-	todos := []string{
-		"Do the laundry",
-		"Learn golang",
-		"Have a snack",
+	todos := []domain.ToDo{
+		domain.NewTodo("Do the laundry"),
+		domain.NewTodo("Learn golang"),
+		domain.NewTodo("Have a snack"),
 	}
 
 	for i, todo := range todos {
@@ -16,6 +19,6 @@ func main() {
 			mark = "✓"
 		}
 
-		fmt.Printf("%s %s\n", mark, todo)
+		fmt.Printf("%s %s\n", mark, todo.Name)
 	}
 }
