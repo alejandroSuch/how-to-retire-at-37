@@ -3,10 +3,19 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Println("TO-DO LIST")
-	fmt.Println("==========")
-	fmt.Println("")
-	fmt.Println("✗ Do the laundry")
-	fmt.Println("✓ Learn golang")
-	fmt.Println("✗ Have a snack")
+	todos := []string{
+		"Do the laundry",
+		"Learn golang",
+		"Have a snack",
+	}
+
+	for i, todo := range todos {
+		mark := "✗"
+
+		if i%2 == 1 {
+			mark = "✓"
+		}
+
+		fmt.Printf("%s %s\n", mark, todo)
+	}
 }
